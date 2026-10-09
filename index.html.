@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les chasseurs du dimanche</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #18251c;
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+    .carte {
+      max-width: 380px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #293b2d;
+      border-radius: 18px;
+    }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border: 0;
+      border-radius: 8px;
+      font-size: 17px;
+    }
+    button {
+      background: #4caf50;
+      color: white;
+      font-weight: bold;
+    }
+    .discord {
+      display: block;
+      margin-top: 25px;
+      color: #b8e6bd;
+    }
+    #message { color: #ffd180; }
+  </style>
+</head>
+<body>
+  <div class="carte">
+    <h1>Les chasseurs du dimanche</h1>
+    <p>Bienvenue sur notre serveur Discord !</p>
+    <p>Entre le code à 4 chiffres pour nous rejoindre.</p>
+
+    <form id="formulaire">
+      <input id="code" type="text" inputmode="numeric"
+        maxlength="4" pattern="[0-9]{4}"
+        placeholder="Code à 4 chiffres" required>
+      <button type="submit">Rejoindre le serveur</button>
+    </form>
+
+    <p id="message"></p>
+
+    <a class="discord"
+      href="https://discord.gg/fbF6AqavRY">
+      Accéder directement à l'invitation Discord
+    </a>
+  </div>
+
+  <script>
+    document.getElementById("formulaire")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
+        const code = document.getElementById("code").value;
+        if (code === "5827") {
+          window.location.href =
+            "https://discord.gg/fbF6AqavRY";
+        } else {
+          document.getElementById("message").textContent =
+            "Code incorrect. Vérifie les 4 chiffres !";
+        }
+      });
+  </script>
+</body>
+</html>
